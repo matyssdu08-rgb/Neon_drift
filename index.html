@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Neon Drift</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+<div id="canvas-container"></div>
+
+<!-- FLASH -->
+<div id="flash"></div>
+
+<!-- HUD GAUCHE — Contrôles -->
+<div id="controls-hud">
+    <h3>⬡ CONTRÔLES</h3>
+    <div><span class="key">Z</span> Accélérer</div>
+    <div><span class="key">S</span> Freiner</div>
+    <div><span class="key">Q</span> Gauche</div>
+    <div><span class="key">D</span> Droite</div>
+</div>
+
+<!-- HUD BAS — Vitesse + Temps + Meilleur -->
+<div id="hud">
+    <div class="hud-card">
+        <div class="hud-label">Vitesse</div>
+        <div class="hud-value" id="speed">0 <span>km/h</span></div>
+    </div>
+    <div class="hud-card" style="padding: 10px 30px;">
+        <div class="hud-label">Temps</div>
+        <div class="hud-value" id="timer">0.000 <span>s</span></div>
+    </div>
+    <div class="hud-card">
+        <div class="hud-label">Meilleur</div>
+        <div class="hud-value" id="bestTime">— <span>s</span></div>
+    </div>
+</div>
+
+<!-- MINI-CARTE -->
+<div id="minimap-container">
+    <div class="minimap-label">CIRCUIT</div>
+    <canvas id="minimap" width="180" height="180"></canvas>
+</div>
+
+<!-- MENU -->
+<div id="menu">
+    <div class="menu-logo">NEON DRIFT</div>
+    <div class="menu-subtitle">Circuit Racing</div>
+    <div id="lastTime"></div>
+
+    <div id="leaderboard">
+        <div class="lb-title">🏁 CLASSEMENT MONDIAL</div>
+        <div id="leaderboard-list"><div class="lb-empty">Chargement…</div></div>
+    </div>
+
+    <button id="playBtn">DÉMARRER</button>
+</div>
+
+<!-- NAME PROMPT -->
+<div id="name-prompt">
+    <div class="prompt-box">
+        <div class="prompt-title">TOUR TERMINÉ</div>
+        <div class="prompt-subtitle">Temps : <span id="prompt-time"></span></div>
+        <input id="prompt-input" type="text" maxlength="16" placeholder="Ton pseudo…" autocomplete="off" spellcheck="false">
+        <button id="prompt-confirm">ENREGISTRER</button>
+    </div>
+</div>
+
+<!-- COMPTE À REBOURS -->
+<div id="countdown">
+    <div id="countdown-number">3</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
